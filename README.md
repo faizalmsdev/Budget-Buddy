@@ -2,6 +2,10 @@
 
 To visit the website of this project <a href="https://budget-buddy-pi.vercel.app/">Click Here: </a>
 
+## Open For Contribution 
+
+Feel free to make a changes and push it. #hacktoberfest
+
 ## Available Scripts
 
 In the project directory, you can run:
