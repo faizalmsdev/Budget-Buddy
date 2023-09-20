@@ -3,7 +3,6 @@ import { signInWithPopup } from 'firebase/auth';
 import { useNavigate , Navigate } from 'react-router-dom';
 import "./styles.css";
 import {useGetUserInfo} from "../../hooks/useGetUserInfo.js"
-import { useEffect } from 'react';
 
 export const Auth =()=>{
 

@@ -1,57 +1,185 @@
-.expense-tracker {
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    color: #023047;
+/* Reset some default styles */
+body, h1, h2, h3, h4, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Define a primary color scheme */
+:root {
+  --primary-bg-color: #2c3e50; /* Dark blue-gray */
+  --secondary-bg-color: #34495e; /* Slightly lighter blue-gray */
+  --text-color: #ecf0f1; /* Light gray text */
+  --positive-color: #2ecc71; /* Green */
+  --negative-color: #e74c3c; /* Red */
+}
+
+/* Style the container */
+.container {
+  background-color: var(--secondary-bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: var(--text-color);
+}
+
+/* Style the title */
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+/* Style the balance section */
+.balance {
+  margin-top: 20px;
+}
+
+.positive-balance {
+  color: var(--positive-color);
+}
+
+.negative-balance {
+  color: var(--negative-color);
+}
+
+/* Style the summary section */
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.income, .expenses {
+  flex: 1;
+  padding: 10px;
+  background-color: var(--primary-bg-color);
+  border-radius: 5px;
+  margin: 0 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.income h4, .expenses h4 {
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.income-amount, .expenses-amount {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Style the form */
+.add-transaction {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+label {
+  color: var(--text-color);
+}
+
+button[type="submit"] {
+  background-color: var(--primary-bg-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--secondary-bg-color);
+}
+
+/* Style the profile section */
+.profile {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.sign-out-button {
+  background-color: var(--negative-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sign-out-button:hover {
+  background-color: #c0392b; /* Slightly darker red */
+}
+/* Style the transactions section */
+.transactions {
+  margin-top: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+.transactions h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.transaction-item {
+  list-style: none;
+  margin: 10px 0;
+  border-bottom: 1px solid var(--secondary-bg-color);
+  padding: 10px 0;
+
+  /* Add a hover effect */
+  &:hover {
+    background-color: var(--secondary-bg-color);
   }
-  
-  .expense-tracker h1 {
-    font-size: 40px;
-  }
-  .expense-tracker button {
-    margin-left: 10px;
-  }
-  .profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 200px;
-  }
-  .profile-photo {
-    width: 200px;
-    border-radius: 50%;
-  }
-  
-  .sign-out-button {
-    border: none;
-    margin-top: 50px;
-    width: 150px;
-    background: #3498db;
-    background-image: linear-gradient(to bottom, #3498db, #2980b9);
-    border-radius: 10px;
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: bold;
-    padding: 10px 20px 10px 20px;
-    text-decoration: none;
-  }
-  
-  .sign-out-button:hover {
-    background: #3cb0fd;
-  
-    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .transactions {
-    margin-left: 430px;
-    margin-top: 20px;
-    padding-left: 10px;
-    width: 600px;
-    height: 400px;
-    overflow: auto;
-    border: 3px solid #023047;
-  }
+}
+
+.transaction-amount {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.expense {
+  color: var(--negative-color);
+  font-size: 18px;
+}
+
+.income {
+  color: var(--positive-color);
+  font-size: 18px;
+}
+
+/* Add some spacing around the transactions section */
+.transactions {
+  padding: 20px;
+}
